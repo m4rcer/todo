@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TodoApi1</name>
+    </assembly>
+    <members>
+        <member name="M:TodoApi1.Controllers.TodoController.GetAll">
+            <summary>
+            Gets the list of todo
+            </summary>
+            <remarks>
+            Sample request:
+            GET /todo
+            </remarks>
+            <returns>Returns IEnumerable(TodoItem)</returns>
+            <response code="200">Success</response> 
+        </member>
+        <member name="M:TodoApi1.Controllers.TodoController.GetByStep(System.Int32)">
+            <summary>
+            Gets the todo by step
+            </summary>
+            <remarks>
+            Sample request:
+            GET /todo/0
+            </remarks>
+            <param name="step">Step of todos</param>
+            <returns>Returns IEnumerable(TodoItem)</returns>
+            <response code="200">Success</response>
+        </member>
+        <member name="M:TodoApi1.Controllers.TodoController.Create(TodoApi1.Models.TodoItem)">
+            <summary>
+            Creates the todo
+            </summary>
+            <remarks>
+            Sample request:
+            POST /todo
+            {
+                name: "todo name",
+                todoStep: 0
+            }
+            </remarks>
+            <param name="item">TodoItem object</param>
+            <returns>Returns id (int)</returns>
+            <response code="201">Success</response>
+        </member>
+        <member name="M:TodoApi1.Controllers.TodoController.Update(TodoApi1.Models.TodoItem)">
+            <summary>
+            Updates the todo
+            </summary>
+            <remarks>
+            Sample request:
+            PUT /todo
+            {
+                name: "updated name",
+                todoStep: 0,
+                orderId: 1
+            }
+            </remarks>
+            <param name="item">TodoItem object</param>
+            <returns>Returns NoContent</returns>
+            <response code="204">Success</response>
+        </member>
+        <member name="M:TodoApi1.Controllers.TodoController.Delete(System.Int32)">
+            <summary>
+            Deletes the todo by id
+            </summary>
+            <remarks>
+            Sample request:
+            DELETE /note/1
+            </remarks>
+            <param name="id">Id of the todo (int)</param>
+            <returns>Returns NoContent</returns>
+            <response code="204">Success</response>
+        </member>
+        <member name="M:TodoApi1.Controllers.TodoController.DeleteMany(System.Int32)">
+            <summary>
+            Deletes the todos by step
+            </summary>
+            <remarks>
+            Sample request:
+            DELETE /note/many/0
+            </remarks>
+            <param name="step">Step of the todos (TodoSteps | int)</param>
+            <returns>Returns NoContent</returns>
+            <response code="204">Success</response>
+        </member>
+        <member name="M:TodoApi1.Controllers.TodoController.CreateMany(TodoApi1.Models.TodoItem[])">
+            <summary>
+            Creates the todos
+            </summary>
+            <remarks>
+            Sample request:
+            PUT /note/many
+            { [
+                {
+                name: "todo name",
+                todoStep: 0,
+                orderId: 1
+                },
+                {
+                name: "todo name2",
+                todoStep: 0,
+                orderId: 2
+                }
+            ] }
+            </remarks>
+            <returns>Returns NoContent</returns>
+            <response code="204">Success</response>
+        </member>
+    </members>
+</doc>
