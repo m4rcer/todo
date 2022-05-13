@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "f6ZjFBpP6F8+cT5xD4jMzhqjtuqBD6l1njL7fphqqsbMHvG6j0BgGy5lmGPj3yYmUM70WFeIGyblPLDNh1YUiA==",
+  "dgSpecHash": "7Jv3IncB0gcZ/8HAV0zBjXhTiv/lA/nUIEnYVONB3CgN+E97RBwrkewMwbua0l7uYTr+4ZdjwpQgjHRyHHOWPw==",
   "success": true,
-  "projectFilePath": "D:\\Programming\\Asp.net\\TodoApi1\\TodoApi1.csproj",
+  "projectFilePath": "D:\\Programming\\TodoApi1\\TodoApi1.Backend\\TodoApi1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\m4rce\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\m4rce\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\m4rce\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
+    "C:\\Users\\m4rce\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
     "C:\\Users\\m4rce\\.nuget\\packages\\microsoft.aspnet.cors\\5.2.8\\microsoft.aspnet.cors.5.2.8.nupkg.sha512",
     "C:\\Users\\m4rce\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.8\\microsoft.aspnet.webapi.client.5.2.8.nupkg.sha512",
     "C:\\Users\\m4rce\\.nuget\\packages\\microsoft.aspnet.webapi.core\\5.2.8\\microsoft.aspnet.webapi.core.5.2.8.nupkg.sha512",

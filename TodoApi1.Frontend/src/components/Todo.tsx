@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import InputField from "../components/InputField";
 import TodoList from "../components/TodoList";
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
-import { TodoItem, TodoSteps } from "../models/todoItem";
+import { TodoItem, TodoSteps, Categories } from "../models/todoItem";
 import {
   PostTodo,
   GetCompletedTodos,
@@ -16,6 +16,7 @@ const Todo: React.FC = () => {
   const [UncompletedTodos, setUncompletedTodos] = useState<Array<TodoItem>>([]);
   const [InProgressTodos, setInProgressTodos] = useState<Array<TodoItem>>([]);
   const [CompletedTodos, setCompletedTodos] = useState<Array<TodoItem>>([]);
+  const [result, setResult] = useState([{}]);
 
   useEffect(() => {
     GetUncompletedTodos(setUncompletedTodos);
@@ -29,7 +30,15 @@ const Todo: React.FC = () => {
     if (todo) {
       setUncompletedTodos([
         ...UncompletedTodos,
-        { id: id, name: todo, todoStep: TodoSteps.Uncomplete, orderId: id },
+        {
+          id: id,
+          name: todo,
+          todoStep: TodoSteps.Uncomplete,
+          orderId: id,
+          description: "",
+          category: Categories.NoCategory,
+          creationDate: new Date(),
+        },
       ]);
       setTodo("");
     }
@@ -87,7 +96,7 @@ const Todo: React.FC = () => {
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <div className="App">
-        <span className="heading">Taskify</span>
+        <h1 className="title">My Todo-s</h1>
         <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
         <TodoList
           uncompletedTodos={UncompletedTodos}

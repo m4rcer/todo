@@ -24,6 +24,27 @@
           "lib/netstandard2.0/Humanizer.dll": {}
         }
       },
+      "MediatR/10.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MediatR.Contracts": "1.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.1/MediatR.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/MediatR.dll": {}
+        }
+      },
+      "MediatR.Contracts/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MediatR.Contracts.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MediatR.Contracts.dll": {}
+        }
+      },
       "Microsoft.AspNet.Cors/5.2.8": {
         "type": "package",
         "compile": {
@@ -2307,6 +2328,36 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "MediatR/10.0.1": {
+      "sha512": "vnjbk4giDJzJelh34Ygt0eorApCKrRFB7j0pauFPY1oxfO3cEZ7FugBrIOjCM76SDGTOmPFfbfmVnz1t3iFrGA==",
+      "type": "package",
+      "path": "mediatr/10.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "gradient_128x128.png",
+        "lib/netstandard2.1/MediatR.dll",
+        "lib/netstandard2.1/MediatR.xml",
+        "mediatr.10.0.1.nupkg.sha512",
+        "mediatr.nuspec"
+      ]
+    },
+    "MediatR.Contracts/1.0.1": {
+      "sha512": "NsRvOxthhkYml4DcBMyJsmym8C4MchioH7wxKVPEg7plFj9Euh/i4IcmZ3Gvgx6+K8obeuhPeJdoBl56wnuo3A==",
+      "type": "package",
+      "path": "mediatr.contracts/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "gradient_128x128.png",
+        "lib/net461/MediatR.Contracts.dll",
+        "lib/net461/MediatR.Contracts.xml",
+        "lib/netstandard2.0/MediatR.Contracts.dll",
+        "lib/netstandard2.0/MediatR.Contracts.xml",
+        "mediatr.contracts.1.0.1.nupkg.sha512",
+        "mediatr.contracts.nuspec"
       ]
     },
     "Microsoft.AspNet.Cors/5.2.8": {
@@ -7724,6 +7775,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "AutoMapper >= 10.0.0",
+      "MediatR >= 10.0.1",
       "Microsoft.AspNet.WebApi.Cors >= 5.2.8",
       "Microsoft.EntityFrameworkCore >= 5.0.16",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.16",
@@ -7739,11 +7791,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programming\\Asp.net\\TodoApi1\\TodoApi1.csproj",
+      "projectUniqueName": "D:\\Programming\\TodoApi1\\TodoApi1.Backend\\TodoApi1.csproj",
       "projectName": "TodoApi1",
-      "projectPath": "D:\\Programming\\Asp.net\\TodoApi1\\TodoApi1.csproj",
+      "projectPath": "D:\\Programming\\TodoApi1\\TodoApi1.Backend\\TodoApi1.csproj",
       "packagesPath": "C:\\Users\\m4rce\\.nuget\\packages\\",
-      "outputPath": "D:\\Programming\\Asp.net\\TodoApi1\\obj\\",
+      "outputPath": "D:\\Programming\\TodoApi1\\TodoApi1.Backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\m4rce\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7775,6 +7827,10 @@
           "AutoMapper": {
             "target": "Package",
             "version": "[10.0.0, )"
+          },
+          "MediatR": {
+            "target": "Package",
+            "version": "[10.0.1, )"
           },
           "Microsoft.AspNet.WebApi.Cors": {
             "target": "Package",

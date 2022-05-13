@@ -8,19 +8,21 @@ interface props {
   handleAdd: (e: React.FormEvent) => void;
 }
 
-const InputField: React.FC<props> = ({ 
-  todo, 
-  setTodo, 
-  handleAdd,
-   }) => {
+const InputField: React.FC<props> = ({ todo, setTodo, handleAdd }) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   return (
     <form
       className="input"
       onSubmit={(e) => {
-        handleAdd(e);
-        inputRef.current?.blur();
+        if (todo.length>=1 && todo.length<=50)
+        {
+          handleAdd(e);
+          inputRef.current?.blur();
+        }
+        else {
+          e.preventDefault();
+        }
       }}
     >
       <input
@@ -32,7 +34,7 @@ const InputField: React.FC<props> = ({
         className="input__box"
       />
       <button type="submit" className="input_submit">
-        GO
+        Add
       </button>
     </form>
   );

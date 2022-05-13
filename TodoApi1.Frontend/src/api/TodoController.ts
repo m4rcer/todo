@@ -1,6 +1,5 @@
-import { Http2ServerResponse } from "http2";
 import React, { useState } from "react";
-import { TodoItem, TodoSteps } from "../models/todoItem";
+import { TodoItem, TodoSteps, Categories } from "../models/todoItem";
 
 const BASE_PATH = "https://localhost:44347/api/";
 const CONTROLLER_PATH = "Todo/";
@@ -88,12 +87,14 @@ export const RewriteCategory = async (
   todos: Array<TodoItem>,
   step: TodoSteps
 ): Promise<void> => {
-  let items: Array<{ orderId: number; name: string; todoStep: TodoSteps }> = [];
+  let items: Array<{ orderId: number; name: string; todoStep: TodoSteps; description: string; category: Categories }> = [];
   todos.forEach((item) => {
     items.push({
       orderId: item.orderId,
       name: item.name,
+      description: item.description,
       todoStep: item.todoStep,
+      category: item.category
     });
   });
   await DeleteManyTodo(step);

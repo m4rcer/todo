@@ -3,8 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.Encodings.Web;
-using System.Threading.Tasks;
 using TodoApi1.Data;
 using TodoApi1.Models;
 
@@ -80,6 +78,8 @@ namespace TodoApi1.Controllers
             {
                 return BadRequest();
             }
+            item.Description = "";
+            item.CreationDate = DateTime.Now;
             item.OrderId = item.Id;
             _context.TodoItems.Add(item);
             _context.SaveChanges();
@@ -103,7 +103,7 @@ namespace TodoApi1.Controllers
         /// <response code="204">Success</response>
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public IActionResult Update([FromBody] TodoItem item)
+        public ActionResult Update([FromBody] TodoItem item)
         {
             if (item == null)
             {
@@ -118,9 +118,10 @@ namespace TodoApi1.Controllers
             {
                 return NotFound();
             }
-
+            todo.Description = item.Description;
             todo.Name = item.Name;
             todo.TodoStep = item.TodoStep;
+            todo.Category = item.Category;
 
             _context.SaveChanges();
             return new NoContentResult();

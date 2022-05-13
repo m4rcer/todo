@@ -1,13 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Neucha&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, .App {
+  background-color: #F0F8FF;;
+}
 
 .App {
-  width: 100vw;
-  min-height: 100vh;
-  display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #2f74c0;
-  font-family: "Neucha", cursive;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.6;
 }
 
 .heading {

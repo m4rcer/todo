@@ -1,18 +1,36 @@
+.title {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  color: #2f74c0;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.list-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  list-style-type: none;
+}
+
 .input {
   display: flex;
-  width: 95%;
+  width: 80%;
   position: relative;
-  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
 }
 
 .input__box {
   width: 100%;
-  border-radius: 50px;
+  border-radius: 5px;
   padding: 20px 30px;
   font-size: 25px;
   border: none;
   transition: 0.2s;
-  box-shadow: inset 0 0 5px black;
+  box-shadow: 0px 9px 12px -1px rgba(144, 144, 144, 0.56);
+  box-shadow: inset;
 }
 
 .input__box:focus {
@@ -22,17 +40,17 @@
 
 .input_submit {
   position: absolute;
-  width: 50px;
+  width: 70px;
   height: 50px;
   margin: 12px;
-  border-radius: 50px;
+  border-radius: 5px;
   right: 0px;
   border: none;
-  font-size: 15px;
+  font-size: 25px;
   background-color: #2f74c0;
   color: white;
   transition: 0.2s all;
-  box-shadow: 0 0 10px black;
+  font-weight: 400;
 }
 
 .input_submit:hover {
@@ -45,46 +63,49 @@
 }
 
 .container {
-  width: 95%;
+  width: 80%;
   display: flex;
   margin-top: 10px;
   justify-content: space-between;
   align-items: flex-start;
 }
 
+.todo-lists {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.todo-list {
+  display: flex;
+}
+
 .todos {
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  width: 47.5%;
   padding: 15px;
-  background-color: rgb(50, 195, 205);
-}
-
-.dragactive {
-  background-color: rgb(0, 221, 236);
-}
-
-.dragcomplete {
-  background-color: rgb(255, 38, 0);
-}
-
-.remove {
-  background-color: rgb(235, 103, 80);
+  background-color: #D9E1E8;
+  color: black;
 }
 
 .todos__heading {
   font-size: 30px;
-  /* text-align: center; */
-  color: white;
+  font-weight: 500;
+  border-bottom: 1px solid gray;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.687);
 }
 
 .todos__single {
   display: flex;
   border-radius: 5px;
+  max-width: 270px;
   padding: 20px;
-  margin-top: 15px;
-  background-image: url("https://img.freepik.com/free-photo/crumpled-yellow-paper-background-close-up_60487-2390.jpg?size=626&ext=jpg");
+  margin: 15px;
+  background-color: aliceblue;
   transition: 0.2s;
 }
 
@@ -94,24 +115,34 @@
 
 .todos__single:hover {
   box-shadow: 0 0 5px black;
-  transform: scale(1.03);
 }
 
 .todos__single--text {
+  word-wrap: break-word;
+  word-break: break-all;
   flex: 1;
   padding: 5px;
   border: none;
   font-size: 20px;
 }
 
-.todos__single--text:focus {
-  outline: none;
-}
-
 .icon {
   margin-left: 10px;
   font-size: 25px;
   cursor: pointer;
+  color: rgba(0, 0, 0, 0.687);
+}
+
+.edit-icon, .delete-icon {
+  transition: 0.3s color;
+}
+
+.edit-icon:hover {
+  color: #2f74c0;
+}
+
+.delete-icon:hover {
+  color: red
 }
 
 @media (max-width: 1100px) {
@@ -122,14 +153,30 @@
 
 @media (max-width: 700px) {
   .input {
-    width: 95%;
+    width: 70%;
   }
+
   .container {
-    width: 95%;
+    width: 70%;
     flex-direction: column;
   }
+
   .todos {
-    width: 95%;
+    width: 70%;
     margin-bottom: 10px;
   }
+}
+
+.overflow {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 250px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
